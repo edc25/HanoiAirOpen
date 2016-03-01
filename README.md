@@ -8,10 +8,10 @@ Once I figure out what license is best, I intend to change this!
 
 ### Terms
 
-Mass concentration - a way of measuring the raw amount of something in the air, in terms of mass (in our case micrograms per litre - ug/l).
-Particle count - a way of measuring the raw amount of something in the air by counting the number of particles we see.
-PM2.5 - Small particles, smaller than 2.5um. 
-AQI - A scale for comparing air quality in a number of dimensions. However, I only care about PM2.5 is it is now considered to be the most harmful type of pollution. It is a non-linear scale, and it is based on mass concentration - see  http://aqicn.org/faq/2013-09-09/revised-pm25-aqi-breakpoints/
+* Mass concentration - a way of measuring the raw amount of something in the air, in terms of mass (in our case micrograms per litre - ug/l).
+* Particle count - a way of measuring the raw amount of something in the air by counting the number of particles we see.
+* PM2.5 - Small particles, smaller than 2.5um. 
+* AQI - A scale for comparing air quality in a number of dimensions. However, I only care about PM2.5 is it is now considered to be the most harmful type of pollution. It is a non-linear scale, and it is based on mass concentration - see  http://aqicn.org/faq/2013-09-09/revised-pm25-aqi-breakpoints/
 
 ### HanoiAir
 HanoiAir is a Parse.com application, written in Javascript (not node.js, but it should be reuseable)
