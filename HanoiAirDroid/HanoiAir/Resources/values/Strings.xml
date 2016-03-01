@@ -1,0 +1,23 @@
+<resources>
+	<string name="hello">Hello World, Click Me!</string>
+	<string name="app_name">Hanoi Air</string>
+	<string name="getAirQualityAlerts">Get Urgent Air Quality Alerts</string>
+	<string name="currentAirQuality">Current Air Quality:</string>
+	<string name="iconMadeByFreepikFromWwwFlaticonComLicensedUnderCCBY30">Icon made by Freepik from www.flaticon.com licensed under CC-BY 3.0</string>
+	<string name="refreshStatus">Refresh Status</string>
+	<string name="goodQuality">Good</string>
+	<string name="poorQuality">Poor</string>
+	<string name="badQuality">Bad</string>
+	<string name="terribleQuality">Terrible</string>
+	<string name="goodAdvice">Make the most of the good air quality, consider opening windows and getting some outdoor exercise in.</string>
+	<string name="poorAdvice">Think about exercising outside or inside - although the air quality isn\'t great, it\'s often this bad in Hanoi.</string>
+	<string name="badAdvice">Try not to do too much outdoors and keep windows closed. Consider wearing a mask.</string>
+	<string name="terribleAdvice">Avoid outdoor activity unless wearing a suitable mask. Keep doors and windows closed, and consider avoiding indoor exercise too.</string>
+	<string name="descriptionFormat">{description} - AQI: {aqi}</string>
+	<string name="forecastFormat">Forecast - {forecast}</string>
+	<string name="forecastUp">Worse</string>
+	<string name="forecastSame">No change</string>
+	<string name="forecastDown">Improving</string>
+	<string name="forecastSameOrUp">Slightly worse</string>
+	<string name="forecastSameOrDown">Slightly better</string>
+</resources>

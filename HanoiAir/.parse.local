@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "HanoiAir": {
+      "applicationId": "zuB5mkU1etDB5YjR7Vtgl0SNjBQJ9DSw2lNIbhCQ"
+    },
+    "_default": {
+      "link": "HanoiAir"
+    }
+  }
+}

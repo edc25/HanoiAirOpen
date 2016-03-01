@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.0.6" package="com.cognitivecoders.hanoi_air" android:versionCode="6">
+	<uses-sdk android:minSdkVersion="19" />
+	<!-- AndroidManifest.xml -->
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<permission android:protectionLevel="signature" android:name="com.cognitivecoders.hanoi_air.permission.C2D_MESSAGE" />
+	<uses-permission android:name="com.cognitivecoders.hanoi_air.permission.C2D_MESSAGE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.BATTERY_STATS" />
+	<uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.READ_LOGS" />
+	<application android:allowBackup="true" android:name="hanoiair.App" android:icon="@mipmap/ic_launcher" android:label="@string/app_name">
+		<service android:name="parse.ParsePushService" />
+		<receiver android:name="parse.ParsePushBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+				<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+				<!--
+        IMPORTANT: Change "com.parse.starter" to match your app's package name.
+      -->
+				<category android:name="com.cognitivecoders.hanoi_air" />
+			</intent-filter>
+		</receiver>
+		<!--  <service android:name="com.parse.PushService" />
+   <receiver android:name="com.parse.GcmBroadcastReceiver"
+      android:permission="com.google.android.c2dm.permission.SEND">
+    <intent-filter>
+      <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+      <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+ 
+      <category android:name="com.cognitivecoders.hanoi_air" />
+    </intent-filter>
+  </receiver>-->
+	</application>
+</manifest>

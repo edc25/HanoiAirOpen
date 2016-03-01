@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:verticalScrollbarPosition="defaultPosition"
+        android:overScrollMode="always"
+        android:fadeScrollbars="true">
+        <hanoiair.GaugeView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/gauge"
+            android:scaleType="center" />
+        <TextView
+            android:text="@string/currentAirQuality"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/aqiLabel" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/aqiValue" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/adviceText" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/forecast" />
+        <CheckBox
+            android:text="@string/getAirQualityAlerts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/getAlerts" />
+        <Button
+            android:text="@string/refreshStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/refreshStatus" />
+        <TextView
+            android:text="@string/iconMadeByFreepikFromWwwFlaticonComLicensedUnderCCBY30"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textView1" />
+    </LinearLayout>
+</ScrollView>
