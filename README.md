@@ -9,9 +9,9 @@ Once I figure out what license is best, I intend to change this!
 ### Terms
 
 * Mass concentration - a way of measuring the raw amount of something in the air, in terms of mass (in our case micrograms per litre - ug/l).
-* Particle count - a way of measuring the raw amount of something in the air by counting the number of particles we see.
+* Particle count - a way of measuring the raw amount of something in the air by counting the number of particles we see. Needs to be converted into Mass concentration, which (in the case of the AQIVN sensor) I do by dividing by 200.
 * PM2.5 - Small particles, smaller than 2.5um. 
-* AQI - A scale for comparing air quality in a number of dimensions. However, I only care about PM2.5 is it is now considered to be the most harmful type of pollution. It is a non-linear scale, and it is based on mass concentration - see  http://aqicn.org/faq/2013-09-09/revised-pm25-aqi-breakpoints/
+* AQI - A scale for comparing air quality in a number of dimensions. However, I only care about PM2.5 as it is now considered to be the most harmful type of pollution. AQI's PM2.5 component is a non-linear scale, and it is based on mass concentration - see  http://aqicn.org/faq/2013-09-09/revised-pm25-aqi-breakpoints/ . Strictly speaking, it's a 24 hour average - which is great when comparing past data across cities, but terrible for knowing about conditions now. Both the US Embassy and HanoiAir therefore use a form of weighted average over the last few hours when giving a PM2.5 AQI reading (I believe AQIVN looks back less, possibly just using the current reading).
 
 ### HanoiAir
 HanoiAir is a Parse.com application, written in Javascript (not node.js, but it should be reuseable)
@@ -37,15 +37,18 @@ I use the Android native UI, so the AXMLs should be a little more familiar anywa
 
 ## TODO
 
+* Sort out a license. GPL isn't compatible with the App Store, and probably also the Play Store. It would also be nice to be able to monetise the app through ads or sponsorship as there will soon be ongoing server costs. However, it would also be nice to keep everything open. Suggestions welcome.
 * Consider moving away from Parse. It provides easy GCM messaging, but including the Parse DLL blows the Xamarin app over the starter size limit. An alternative would be to abstract away the Parse.com bits into a separate library that I can include when building, and that contributors can mock out. It will be necessary to either move away from Parse.com, or run a separate instance of it in any case as Parse will shut down in January 2017.
 * Consider the future of the Xamarin app. I've no real objection to a full rewrite in Java if it means I can get more people involved (although I prefer C#)
 * Nicer UI
-* Show past data on the UI, and perhaps give users the option of more heavily weighting the US or AQIVN sources (or showing that, say, AQIVN is comparatively high and that therefore Tay Ho is maybe worse than Ba Dinh).
+* Show past data on the UI - graphs
+* Perhaps give users the option of more heavily weighting the US or AQIVN sources (or showing if one source is particularly bad).
 * Vietnamese translation
 * Better forecasting
-* Ho Chi Minh City data
-* Include the Long Bien government sensor data.
+* Ho Chi Minh City data and an HCMC version of the app (or better, one app to do both)
+* Include the Long Bien government sensor data (the UNIS sensor doesn't seem to split out PM2.5 data)
+* Figure out whether Tay Ho is actually less polluted on average than Ba Dinh, and adjust conversion factors appropriately. Can take humidity, temperature, time of day, day of week, day of lunar month, etc. into account too.
 
 ## Comments
 
-I think this is a better way of giving air quality information that relying either on AQIVN or the US Embassy. AQIVN has great uptime, but there's only a single sensor and as such it's hard to know exactly how to convert that data into mass concentration and from there into AQI. The US Embassy is probably accurate - they have the resources to buy an expensive bit of kit and keep it calibrated. But their data is, I think, lagged by about an hour (half an hour because it's an hourly average, and another half hour because it seems to take that long to arrive). Air Quality in Hanoi can change by a factor of two in an hour.
+I think this is a better way of giving air quality information than relying either on AQIVN or the US Embassy/AQICN. AQIVN has great uptime, but there's only a single sensor and it's hard to know exactly how to convert that data into mass concentration and from there into AQI. The US Embassy is probably accurate - they have the resources to buy an expensive bit of kit and keep it calibrated. But their data is, I think, lagged by about an hour (half an hour because it's an hourly average, and another half hour because it seems to take that long to arrive). Air Quality in Hanoi can change by a factor of two in an hour. Today the US sensor has reported a count of about 330 at 8am, and 90, four hours later atmidday - that's a massive change. AQIVN's raw readings have shown even bigger falls.
